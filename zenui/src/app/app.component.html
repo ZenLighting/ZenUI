@@ -1,0 +1,25 @@
+<div class="main-div">
+  <mat-toolbar>
+    <button mat-icon-button class="menu-button" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    ZenUI
+  </mat-toolbar>
+  <mat-sidenav-container class="example-container">
+    <!--<mat-sidenav #topnav mode="top" opened></mat-sidenav>-->
+    <mat-sidenav #sidenav mode="side" opened>
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<!--<mat-sidenav-container class="sidenav-container">
+  <app-sidenav #sidenav></app-sidenav>
+
+</mat-sidenav-container>-->
+
+
