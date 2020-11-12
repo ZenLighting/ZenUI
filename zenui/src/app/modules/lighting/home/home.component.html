@@ -1,0 +1,8 @@
+<div class="container">
+  <input type="text" placeholder="search lights" class="light-search">
+  <div class="light-card-container">
+    <div class="light-card" *ngFor="let light of selectedLights">
+      <app-light-info-card [name]="light.name" [address]="light.address"></app-light-info-card>
+    </div>
+  </div>
+</div>

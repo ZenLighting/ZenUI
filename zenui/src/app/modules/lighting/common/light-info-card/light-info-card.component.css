@@ -1,0 +1,34 @@
+/* fonts  */
+@import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
+
+
+.container{
+  border-style: solid none none none;
+  border-radius: 20px;
+  border-color: lightgreen;
+  margin: 10px;
+  width: 250px;
+  height: 100px;
+  box-shadow: 1px 1px 20px 3px rgba(0,0,0, .1);
+  overflow: hidden;
+}
+
+.info-left{
+  float: left;
+  padding-left: 10px;
+  width: 125px;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-right{
+  float: right;
+  width: 125px;
+}
+
+.text-large{
+  font-size: large;
+  font-weight: 600;
+}
