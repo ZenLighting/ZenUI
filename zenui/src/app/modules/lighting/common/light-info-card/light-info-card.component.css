@@ -11,6 +11,7 @@
   height: 100px;
   box-shadow: 1px 1px 20px 3px rgba(0,0,0, .1);
   overflow: hidden;
+  display: flex;
 }
 
 .info-left{
@@ -31,4 +32,9 @@
 .text-large{
   font-size: large;
   font-weight: 600;
+}
+
+canvas{
+  width: 125px;
+  height: 100%;
 }
