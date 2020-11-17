@@ -27,6 +27,7 @@
 .image-right{
   float: right;
   width: 125px;
+  padding: 5px;
 }
 
 .text-large{

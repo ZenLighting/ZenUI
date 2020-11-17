@@ -34,8 +34,8 @@ export class LightInfoCardComponent implements AfterViewInit {
     let gridHeight = this.grid.length;
     let gridWidth = this.grid[0].length;
 
-    let scalingFactorX = canvasHeight/gridHeight;
-    let scalingFactorY = canvasWidth/gridWidth;
+    let scalingFactorY = canvasHeight/gridHeight;
+    let scalingFactorX = canvasWidth/gridWidth;
     console.log(scalingFactorY, scalingFactorX);
     for(let i=0; i<gridHeight; i++){
       for(let u=0; u<gridWidth; u++){
