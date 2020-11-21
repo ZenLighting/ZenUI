@@ -5,13 +5,17 @@
 .container{
   border-style: solid none none none;
   border-radius: 20px;
-  border-color: lightgreen;
+  border-color: red;
   margin: 10px;
   width: 250px;
   height: 100px;
   box-shadow: 1px 1px 20px 3px rgba(0,0,0, .1);
   overflow: hidden;
   display: flex;
+}
+
+.on{
+  border-color: lightgreen
 }
 
 .info-left{
@@ -33,6 +37,7 @@
 .text-large{
   font-size: large;
   font-weight: 600;
+  word-wrap: anywhere;
 }
 
 canvas{
