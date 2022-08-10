@@ -1,10 +1,13 @@
 <div class="container" [ngClass]="{'on': on}">
-  <div class="top-bar"></div>
-  <div class="info-left">
-    <div class="text-large">{{name}}</div>
-    <p>{{address}}</p>
+  <div class="top-bar">
+    <div class="text-large">{{device.name}}</div>
+    <p>{{device.last_address}}</p>
   </div>
-  <div class="image-right">
+  <div class="image-right" (click)="openColorPicker()">
     <canvas #gridcanvas></canvas>
+  </div>
+  <div class="actions">
+    <input #colorselector class="colorselector" type="color" [(ngModel)]="color" (change)="sendColor()">
+    <button mat-button (click)="sendColor()">Send</button>  
   </div>
 </div>

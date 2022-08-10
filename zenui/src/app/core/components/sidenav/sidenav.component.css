@@ -12,3 +12,8 @@
   overflow: auto;
   border: 1px solid #555;
 }
+
+.vertical-list{
+  display: flex;
+  flex-direction: column;
+}

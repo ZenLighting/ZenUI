@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Device } from 'src/app/core/models/devices';
 import {RestapiService, DeviceInformation} from "../../../core/services/zenserver/restapi/restapi.service";
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import {RestapiService, DeviceInformation} from "../../../core/services/zenserve
 })
 export class HomeComponent implements OnInit {
 
-  private lights: Array<any> = [];
+  private lights: Array<Device> = [];
   public selectedLights: Array<any> = [
     /*{name: "asdasd", address: "123", grid: [
       [{index: 1, r: 255, g: 0, b:0}, 0, 0],
@@ -23,37 +24,9 @@ export class HomeComponent implements OnInit {
   constructor(private zenServer: RestapiService) { }
 
   async ngOnInit(): Promise<void> {
-    let macAddrs = await this.zenServer.listDevices();
-    console.log(macAddrs);
-    let requests = []
-    macAddrs.forEach((addr) => {
-      let promise = this.zenServer.getDeviceInformation(addr);
-      requests.push(promise);
-    })
-    let values = await Promise.all(requests);
-    values.forEach((value) => {
-      this.lights.push({
-        mac: value.mac,
-        grid: value.grid,
-        address: value.address
-      });
-    })
+    let response = await this.zenServer.listDevices();
+    this.lights = response.devices;
     this.selectedLights = this.lights;
-    setInterval(async () => {
-      macAddrs.forEach((addr) => {
-        let promise = this.zenServer.getDeviceInformation(addr);
-        requests.push(promise);
-      })
-      let values = await Promise.all(requests);
-      values.forEach((value) => {
-        for(let i =0; i<this.lights.length; i++){
-          if(this.lights[i].mac == value.mac){
-            this.lights[i].grid = value.grid;
-          }
-        }
-      })
-      this.selectedLights = this.lights;
-    }, 500);
   }
 
   async toggleColor(macaddress: string){

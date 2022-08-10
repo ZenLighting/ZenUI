@@ -2,7 +2,7 @@
   <input type="text" placeholder="search lights" class="light-search">
   <div class="light-card-container">
     <div class="light-card" *ngFor="let light of selectedLights">
-      <app-light-info-card [name]="light.mac" [address]="light.address" [grid]="light.grid" (click)="toggleColor(light.mac)"></app-light-info-card>
+      <app-light-info-card [device]="light"></app-light-info-card>
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  zenServerAddress: "http://192.168.1.12:5000"
+  zenServerAddress: "http://192.168.1.11:8080"
 };
 
 /*
