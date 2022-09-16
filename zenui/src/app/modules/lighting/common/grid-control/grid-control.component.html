@@ -1,0 +1,4 @@
+<input #colorselector class="colorselector" type="color" [(ngModel)]="color" (change)="sendColor()">
+<div class="image-right" (click)="openColorPicker()">
+    <canvas #gridcanvas></canvas>
+</div>

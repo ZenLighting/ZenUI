@@ -16,6 +16,13 @@
   grid-auto-rows: 1fr;
 }
 
+app-grid-control{
+  grid-column-start: 1;
+  grid-column-end: 12;
+  grid-row-start: 4;
+  grid-row-end: 12;
+}
+
 .on{
   border-color: lightgreen
 }

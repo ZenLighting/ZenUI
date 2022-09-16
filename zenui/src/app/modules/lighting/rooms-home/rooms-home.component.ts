@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { RoomAsJSON } from 'src/app/core/models/room';
 import {RestapiService} from "../../../core/services/zenserver/restapi/restapi.service";
+
 @Component({
   selector: 'app-rooms-home',
   templateUrl: './rooms-home.component.html',
@@ -11,6 +12,7 @@ import {RestapiService} from "../../../core/services/zenserver/restapi/restapi.s
 export class RoomsHomeComponent implements OnInit {
   rooms: BehaviorSubject<Array<RoomAsJSON>> = new BehaviorSubject([])
   computedColor: Map<string, string> = new Map();
+  //roomCardStates: List[]
 
   constructor(
     private api: RestapiService

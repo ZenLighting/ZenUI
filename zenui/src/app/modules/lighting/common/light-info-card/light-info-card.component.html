@@ -3,11 +3,5 @@
     <div class="text-large">{{device.name}}</div>
     <p>{{device.last_address}}</p>
   </div>
-  <div class="image-right" (click)="openColorPicker()">
-    <canvas #gridcanvas></canvas>
-  </div>
-  <div class="actions">
-    <input #colorselector class="colorselector" type="color" [(ngModel)]="color" (change)="sendColor()">
-    <button mat-button (click)="sendColor()">Send</button>  
-  </div>
+  <app-grid-control></app-grid-control>
 </div>
