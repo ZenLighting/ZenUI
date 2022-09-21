@@ -20,7 +20,7 @@ export class RoomsHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.listRooms().then((result) => {
-      console.log(result);
+      console.log("ROOMS", result);
       this.rooms.next(result.rooms);
       this.computeColorsOfRooms();
     }).catch(e => console.log("Failed to fetch rooms"+e))

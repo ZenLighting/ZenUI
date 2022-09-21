@@ -19,3 +19,7 @@ export interface RoomAsJSON{
 export interface ListRoomResponse{
     rooms: Array<RoomAsJSON>
 }
+
+export interface GetRoomResponse{
+    room: RoomAsJSON;
+}

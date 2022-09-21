@@ -1,7 +1,13 @@
 <div class="container">
     <input type="text" placeholder="search rooms" class="room-search">
     <div class="room-card-container">
-        <div class="room-card" *ngFor="let room of rooms.value">
+        <app-room-info-card 
+        [room]="room.model"
+        *ngFor="let room of rooms.value">
+        {{rooms | json}}
+        </app-room-info-card>
+        <!--<div class="room-card" *ngFor="let room of rooms.value">
+            <input #id="color" type="color">
             <div class="room-name">
                 {{room.model.name}}
             </div>
@@ -11,7 +17,7 @@
             <div class="room-actions">
                 <button mat-button>Color</button>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
     

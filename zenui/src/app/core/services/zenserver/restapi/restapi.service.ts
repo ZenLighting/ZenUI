@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from "../../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {DeviceInformationResponse, ListDeviceRequest} from "src/app/core/models/devices";
-import {ListRoomResponse, RoomModel} from "../../../models/room";
+import {ListRoomResponse, RoomModel, GetRoomResponse} from "../../../models/room";
 
 export interface DeviceInformation{
   mac: string,
@@ -40,6 +40,11 @@ export class RestapiService {
 
   async listRooms(){
     let response = await this.http.get<ListRoomResponse>(environment.zenServerAddress+"/room").toPromise();
+    return response;
+  }
+
+  async getRoom(roomName: string){
+    let response = await this.http.get<GetRoomResponse>(environment.zenServerAddress+"/room/"+roomName).toPromise();
     return response;
   }
 
